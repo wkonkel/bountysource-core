@@ -57,6 +57,17 @@
 #
 
 class Tracker < ActiveRecord::Base
+  searchkick
+
+  def search_data
+    {
+      name: name,
+      issue_count: issues.count,
+      watchers: watchers,
+      forks: forks,
+      open_issues: open_issues
+    }
+  end
 
   STATIC_SUBCLASSNAMES_API = %w(
     Jira::API

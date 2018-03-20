@@ -103,6 +103,14 @@ GEM
     dotenv (0.7.0)
     dotenv-rails (0.7.0)
       dotenv (= 0.7.0)
+    elasticsearch (6.0.1)
+      elasticsearch-api (= 6.0.1)
+      elasticsearch-transport (= 6.0.1)
+    elasticsearch-api (6.0.1)
+      multi_json
+    elasticsearch-transport (6.0.1)
+      faraday
+      multi_json
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
       cookiejar
@@ -318,6 +326,10 @@ GEM
     sawyer (0.5.4)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
+    searchkick (1.5.1)
+      activemodel
+      elasticsearch (>= 1)
+      hashie
     secure_headers (1.2.0)
     selenium-webdriver (2.42.0)
       childprocess (>= 0.5.0)
@@ -443,6 +455,7 @@ DEPENDENCIES
   rspec-rails (~> 3.2.0)
   sass-rails (~> 5.0.7)
   savon (~> 2.11, >= 2.11.2)
+  searchkick
   secure_headers
   selenium-webdriver (~> 2.42.0)
   shoulda-matchers
