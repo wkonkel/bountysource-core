@@ -76,6 +76,7 @@ gem 'angular-rails-templates'
 
 gem 'secure_headers'
 gem 'searchkick'
+gem 'faraday_middleware-aws-sigv4'
 
 group :development do
   gem 'zeus'
