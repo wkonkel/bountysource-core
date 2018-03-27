@@ -46,6 +46,11 @@ GEM
       fog (>= 1.8.0)
     autoprefixer-rails (8.0.0)
       execjs
+    aws-sdk-core (2.11.22)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.11.22)
+      aws-sdk-core (= 2.11.22)
     aws-sigv4 (1.0.2)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.10)
@@ -135,9 +140,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
-    faraday_middleware-aws-sigv4 (0.2.4)
-      aws-sigv4 (~> 1.0)
-      faraday (>= 0.9)
+    faraday_middleware-aws-signers-v4 (0.1.9)
+      aws-sdk-resources (>= 2, < 3)
+      faraday (~> 0.9)
     ffi (1.9.3)
     flying-sphinx (1.0.0)
       faraday_middleware (~> 0.7)
@@ -193,6 +198,7 @@ GEM
     jbuilder (2.0.7)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.3.1)
     joiner (0.2.0)
       activerecord (>= 3.1.0, < 4.1.0)
     jshint (1.5.0)
@@ -423,7 +429,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails
   faker
-  faraday_middleware-aws-sigv4
+  faraday_middleware-aws-signers-v4
   flying-sphinx (~> 1.0.0)
   fog
   foreman
