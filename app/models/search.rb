@@ -49,8 +49,7 @@ class Search < ActiveRecord::Base
   end
 
   def self.tracker_typeahead(query)
-    escaped_query = Riddle::Query.escape(query)
-    tracker_search = Tracker.search("*#{escaped_query}*", select: '*, weight() + issue_count*10 + forks*10 + watchers*10 as custom_weight', order: 'bounty_total DESC, custom_weight DESC').to_a
+    tracker_search = Tracker.search(query, fields: [:name], order: {bounty_total: :desc}, match: :word_start, limit: 5).to_a
     reject_merged_trackers!(tracker_search)
   end
 

@@ -57,7 +57,7 @@
 #
 
 class Tracker < ActiveRecord::Base
-  searchkick
+  searchkick word_start: [:name]
 
   def search_data
     {
@@ -65,7 +65,8 @@ class Tracker < ActiveRecord::Base
       issue_count: issues.count,
       watchers: watchers,
       forks: forks,
-      open_issues: open_issues
+      open_issues: open_issues,
+      bounty_total: bounty_total
     }
   end
 
